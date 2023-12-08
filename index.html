@@ -229,29 +229,55 @@
       color: #333;
   }
 
-  
+ header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+}
+
+header nav div {
+  flex: 1;
+}
+
+header nav #logo {
+  text-align: center;
+  flex: 2; /* Gives the logo more space to stay centered */
+}
+
+.info-icon {
+  float: right; /* Aligns the info button to the right */
+  background: none;
+  border: none;
+  color: white; /* Adjust the color as needed */
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .info-icon {
+    font-size: 16px; /* Smaller icon on smaller screens */
+  }
+} 
 
 </style>
 </head>
 <body>
   <header>
     <nav>
-      <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: space-between; align-items: center; height: 60px;">
-        <!-- Placeholder for left-aligned items if needed -->
-        <li style="flex: 1;"></li>
-        <!-- Centered logo -->
-        <li style="flex: 1; display: flex; justify-content: center;">
-          <a href="https://capricesfestival.com/" target="_blank" id="logo">
-            <img src="logo.png" alt="Task Force Event Logistique Logo" style="height: 100%;">
-          </a>
-        </li>
-        <!-- Right-aligned info button -->
-        <li style="flex: 1; display: flex; justify-content: flex-end;">
-          <button class="info-icon" onclick="openModal()">
-            <i class="fas fa-info-circle"></i>
-          </button>
-        </li>
-      </ul>
+      <div></div> <!-- Placeholder for left alignment, if needed -->
+      <div id="logo">
+        <a href="https://capricesfestival.com/" target="_blank">
+          <img src="logo.png" alt="Logo" style="height: 60px;"> <!-- Adjust height as needed -->
+        </a>
+      </div>
+      <div>
+        <button class="info-icon" onclick="openModal()">
+          <i class="fas fa-info-circle"></i>
+        </button>
+      </div>
     </nav>
   </header>
   <div>
