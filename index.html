@@ -233,6 +233,7 @@
   const urlParams = new URLSearchParams(window.location.search);
   var currentPoints = 0; // Initialize currentPoints
   const idValue = urlParams.get("id");
+  const entrances = null;
   
 
 
@@ -253,7 +254,7 @@
               const currentPoints = parseInt(data.current_points, 10);
               const startingPoints = parseInt(data.starting_points, 10);
               const isClientVIP = data.is_client_vip; // Parse boolean value
-              const entrances = data.entrances; // Parse string value
+              entrances = data.entrances; // Parse string value
               // pointsInfo.textContent = `Points: ${points}`;
               // currentPoints = points; // Update currentPoints here
               // setProgressBarColor(points);
@@ -327,7 +328,7 @@
   }
 
   function openModal() {
-      var entrancesString = "F1,B2,C3"; // Replace with your string or get it from user input
+      var entrancesString = entrances; // Replace with your string or get it from user input
       document.getElementById('progressbar').style.display = 'none';
       document.getElementById('myModal').style.display = 'flex';
       generateEntrances(entrancesString);
