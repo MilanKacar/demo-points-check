@@ -16,27 +16,18 @@
     inherits: true;
     initial-value: 0;
   }
-  /*
-  header {
-      padding: 0px 0; 
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      background-color: transparent;
-      color: white;
-      padding: 15px;
-      align-items: center;
-      text-align: center;
-  }*/
 
   header {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    background-color: #3b3b3b; /* Set the background color for better visibility */
+    grid-template-columns: repeat(3, 1fr);
+    background-color: transparent;
     color: white;
     padding: 10px;
+    text-align: center;
     align-items: center;
-    justify-items: center; /* Center items horizontally */
+    text-align: center;
   }
+
 
   [role="progressbar"] {
     --size: 300px;
@@ -107,7 +98,6 @@
       /* Scale down the image to 40% of its original size   */
       /* Allows for centering with text-align display: inline-block;*/
       grid-column: 2;
-      text-align: center;
       transform: scale(0.4);
       margin-bottom: -120px;
     }
@@ -128,7 +118,7 @@
   
   .loading-style {
       justify-content: center;
-      display: flex;
+      display: felx;
       align-items: center;
       top: 50%;
       left: 50%;
@@ -150,7 +140,6 @@
   .info-icon {
     cursor: pointer;
     grid-column: 3;
-    text-align: right;
     color: white; /* Text color */
     font-size: 20px;
     background: transparent; /* Transparent background */
@@ -395,7 +384,5 @@
           closeModal();
       }
   };
-
-
 </script>
 </html>
