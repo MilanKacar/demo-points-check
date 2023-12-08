@@ -16,11 +16,9 @@
     inherits: true;
     initial-value: 0;
   }
-
+  /*
   header {
-       /* Center the content */
-      padding: 0px 0; /* Add some padding for aesthetic spacing */
-      /* Add other styling as needed */
+      padding: 0px 0; 
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       background-color: transparent;
@@ -28,7 +26,7 @@
       padding: 15px;
       align-items: center;
       text-align: center;
-  }
+  }*/
 
   header {
     display: grid;
@@ -108,6 +106,7 @@
   #logo img {
       /* Scale down the image to 40% of its original size   */
       /* Allows for centering with text-align display: inline-block;*/
+      grid-column: 2;
       transform: scale(0.4);
       margin-bottom: -120px;
     }
@@ -149,6 +148,7 @@
 
   .info-icon {
     cursor: pointer;
+    grid-column: 3;
     color: white; /* Text color */
     font-size: 20px;
     background: transparent; /* Transparent background */
