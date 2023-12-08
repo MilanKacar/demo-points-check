@@ -236,14 +236,19 @@
 <body>
   <header>
     <nav>
-      <li>
-        <a href="https://capricesfestival.com/" target="_blank" id="logo">
-          <img src="logo.png" alt="Task Force Event Logistique Logo">
-        </a>
-      </li>
-      <li>
-        <span class="info-icon" onclick="openModal()"><i class="fas fa-info-circle"></i></span>
-      </li>
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: space-between; align-items: center;">
+        <li style="flex-grow: 1; text-align: left;"> <!-- Placeholder for left side content, if any --> </li>
+        <li>
+          <a href="https://capricesfestival.com/" target="_blank" id="logo">
+            <img src="logo.png" alt="Task Force Event Logistique Logo" style="max-height: 60px;">
+          </a>
+        </li>
+        <li style="flex-grow: 1; text-align: right;">
+          <span class="info-icon" onclick="openModal()">
+            <i class="fas fa-info-circle"></i>
+          </span>
+        </li>
+      </ul>
     </nav>
   </header>
   <div>
