@@ -233,7 +233,10 @@
   const urlParams = new URLSearchParams(window.location.search);
   var currentPoints = 0; // Initialize currentPoints
   const idValue = urlParams.get("id");
-  const entrances = null;
+  var entrances;
+  var isClientVIP;
+  var startingPoints;
+  var currentPoints;
   
 
 
@@ -251,9 +254,9 @@
           .then(response => response.json())
           .then(data => {
               console.log(data);
-              const currentPoints = parseInt(data.current_points, 10);
-              const startingPoints = parseInt(data.starting_points, 10);
-              const isClientVIP = data.is_client_vip; // Parse boolean value
+              currentPoints = parseInt(data.current_points, 10);
+              startingPoints = parseInt(data.starting_points, 10);
+              isClientVIP = data.is_client_vip; // Parse boolean value
               entrances = data.entrances; // Parse string value
               // pointsInfo.textContent = `Points: ${points}`;
               // currentPoints = points; // Update currentPoints here
