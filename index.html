@@ -30,7 +30,7 @@
 
   header {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     background-color: transparent;
     color: white;
     padding: 10px;
@@ -108,7 +108,7 @@
   #logo img {
       /* Scale down the image to 40% of its original size   */
       /* Allows for centering with text-align display: inline-block;*/
-      grid-column: 1;
+      grid-column: 2;
       transform: scale(0.4);
       margin-bottom: -120px;
     }
@@ -150,7 +150,7 @@
 
   .info-icon {
     cursor: pointer;
-    grid-column: 1;
+    grid-column: 3;
     color: white; /* Text color */
     font-size: 20px;
     background: transparent; /* Transparent background */
