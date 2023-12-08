@@ -39,26 +39,24 @@
   }
 
   @media only screen and (max-width: 768px) {
-    header {
-      flex-direction: row;
-      justify-content: space-between;
-      text-align: center;
+    header nav ul li {
+      /* Adjust flex properties for smaller screens */
+      flex: none;
+    }
+  
+    header nav ul li:not(:first-child) {
+      /* Ensure that only the logo is centered on small screens */
+      flex-grow: 1;
     }
     
-    #logo img {
-      height: 120px;
-    }
-
     .info-icon {
+      /* Adjustments for the info icon */
       font-size: 16px;
+      background: none;
+      border: none;
+      color: white;
     }
-
-    footer p {
-      font-size: 12px;
-    }
-
   }
-
 
   [role="progressbar"] {
     --size: 300px;
@@ -231,22 +229,27 @@
       color: #333;
   }
 
+  
+
 </style>
 </head>
 <body>
   <header>
     <nav>
-      <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: space-between; align-items: center;">
-        <li style="flex-grow: 1; text-align: left;"> <!-- Placeholder for left side content, if any --> </li>
-        <li>
+      <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: space-between; align-items: center; height: 60px;">
+        <!-- Placeholder for left-aligned items if needed -->
+        <li style="flex: 1;"></li>
+        <!-- Centered logo -->
+        <li style="flex: 1; display: flex; justify-content: center;">
           <a href="https://capricesfestival.com/" target="_blank" id="logo">
-            <img src="logo.png" alt="Task Force Event Logistique Logo" style="max-height: 60px;">
+            <img src="logo.png" alt="Task Force Event Logistique Logo" style="height: 100%;">
           </a>
         </li>
-        <li style="flex-grow: 1; text-align: right;">
-          <span class="info-icon" onclick="openModal()">
+        <!-- Right-aligned info button -->
+        <li style="flex: 1; display: flex; justify-content: flex-end;">
+          <button class="info-icon" onclick="openModal()">
             <i class="fas fa-info-circle"></i>
-          </span>
+          </button>
         </li>
       </ul>
     </nav>
