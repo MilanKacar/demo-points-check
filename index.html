@@ -210,47 +210,51 @@
       color: #333;
   }
 
- header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: transparent;
-}
 
-header nav div {
-  flex: 1;
-}
-
-header nav #logo {
-  text-align: center;
-  flex: 2; /* Gives the logo more space to stay centered */
-}
-
-.info-icon {
-  float: right; /* Aligns the info button to the right */
-  background: none;
-  border: none;
-  color: white; /* Adjust the color as needed */
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/* Media query for responsiveness */
-@media (max-width: 768px) {
-  .info-icon {
-    font-size: 16px; /* Smaller icon on smaller screens */
+  header nav {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
   }
-} 
+  
+  #logo-container {
+    /* Center the logo */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #logo {
+    /* Adjust the height as needed to make the logo bigger */
+    height: 120px; /* Example height, adjust as needed */
+  }
+  
+  .info-icon {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Adjusting the size of the info icon on smaller screens */
+  @media only screen and (max-width: 768px) {
+    .info-icon {
+      font-size: 16px;
+    }
+  }
 
 </style>
 </head>
 <body>
   <header>
     <nav>
-      <div></div> <!-- Placeholder for left alignment, if needed -->
-      <div>
-        <button class="info-icon" onclick="openModal()">
+      <div style="flex: 1;"></div> <!-- This empty div will push the logo to the center -->
+      <div id="logo-container" style="flex: 2; text-align: center;">
+        <!-- Logo will be displayed after page load, adjust the size as needed -->
+        <img id="logo" src="logo.png" alt="Logo" style="max-width: 100%; height: auto; display: none;"> 
+      </div>
+      <div style="flex: 1; text-align: right;">
+        <button class="info-icon" onclick="openModal()" style="background: none; border: none;">
           <i class="fas fa-info-circle"></i>
         </button>
       </div>
@@ -265,9 +269,6 @@ header nav #logo {
             <p id="noEntrancesMessage" style="display: none; color: red;">No entrances available</p>
         </div>
     </div>
-    <a id="logo" href="https://capricesfestival.com/" target="_blank">
-      <img src="logo.png" alt="Logo" style="height: 60px;"> <!-- Adjust height as needed -->
-    </a>
     <div id="available-points">Dépenses disponibles CHF</div>
     <div id="loadingScreen" class="loading-style"></div>
     <div id="progressbar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="--value: 0; --secondary: #D2D3CD; --progress-value: 1000;"></div>
@@ -433,6 +434,10 @@ header nav #logo {
       if (event.target === document.getElementById('myModal')) {
           closeModal();
       }
+  };
+
+  window.onload = function() {
+    document.getElementById('logo').style.display = 'block';
   };
 </script>
 </html>
