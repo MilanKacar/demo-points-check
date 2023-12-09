@@ -104,10 +104,13 @@
   #logo img {
       /* Scale down the image to 40% of its original size   */
       /* Allows for centering with text-align display: inline-block;*/
-      display: flex;
-      transform: scale(0.4);
-      margin-bottom: -120px;
-      height: 60px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+    background: transparent;
+    -webkit-background-clip: text;
+    color: transparent;
     }
     
   .parent-style {
@@ -262,7 +265,7 @@ header nav #logo {
             <p id="noEntrancesMessage" style="display: none; color: red;">No entrances available</p>
         </div>
     </div>
-    <a id="available-points" href="https://capricesfestival.com/" target="_blank">
+    <a id="logo" href="https://capricesfestival.com/" target="_blank">
       <img src="logo.png" alt="Logo" style="height: 60px;"> <!-- Adjust height as needed -->
     </a>
     <div id="available-points">Dépenses disponibles CHF</div>
