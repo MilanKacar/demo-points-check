@@ -213,28 +213,34 @@
 
   header nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     background-color: transparent;
   }
   
   #logo-container {
-    /* Center the logo */
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
+    /* Set flex to none to keep the logo centered */
+    flex: none;
+    padding: 0 20px; /* You can adjust the padding for visual balance if necessary */
   }
   
   #logo {
-    /* Adjust the height as needed to make the logo bigger */
+    /* Adjust the height as needed */
     height: 120px; /* Example height, adjust as needed */
   }
   
   .info-icon {
+    /* Adjust as needed to make it visible */
     font-size: 20px;
     color: white;
     cursor: pointer;
+  }
+  
+  /* Ensure the info-icon is aligned to the right */
+  .info-icon {
+    display: block;
+    margin-left: auto; /* This will push the button to the right */
   }
   
   /* Adjusting the size of the info icon on smaller screens */
@@ -248,14 +254,16 @@
 </head>
 <body>
   <header>
-    <nav>
-      <div style="flex: 1;"></div> <!-- This empty div will push the logo to the center -->
-      <div id="logo-container" style="flex: 2; text-align: center;">
-        <!-- Logo will be displayed after page load, adjust the size as needed -->
-        <img id="logo" src="logo.png" alt="Logo" style="max-width: 100%; height: auto; display: block;"> 
+    <nav style="display: flex; justify-content: center; align-items: center; padding: 10px;">
+      <!-- Left spacer to ensure logo stays in center -->
+      <div style="flex: 1;"></div> 
+      <!-- Logo container -->
+      <div id="logo-container" style="flex: none;">
+        <img id="logo" src="logo.png" alt="Logo" style="height: auto;"> 
       </div>
+      <!-- Right container for info button to stick it to the right corner -->
       <div style="flex: 1; text-align: right;">
-        <button id="info-icon" onclick="openModal()" style="background: none; border: none; display: none;">
+        <button id="info-icon" class="info-icon" onclick="openModal()" style="background: none; border: none;">
           <i class="fas fa-info-circle"></i>
         </button>
       </div>
