@@ -106,7 +106,7 @@
       /* Allows for centering with text-align display: inline-block;*/
     text-align: center;
     align-items: center;
-    display: flex;
+    display: block;
     box-sizing: border-box;
     background: transparent;
     -webkit-background-clip: text;
@@ -221,6 +221,7 @@
   
   #logo-container {
     /* Center the logo */
+    display: block;
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -228,6 +229,7 @@
   
   #logo {
     /* Adjust the height as needed to make the logo bigger */
+    display: block;
     height: 120px; /* Example height, adjust as needed */
   }
   
@@ -291,7 +293,6 @@
   var isClientVIP;
   var startingPoints;
   var currentPoints;
-  var infoIcon = document.getElementById('info-icon');
   
 
 
@@ -357,7 +358,7 @@
     availablePoints.style.display = 'flex';
     const progressBar = document.getElementById('progressbar');
     progressBar.style.display = 'flex'; // Change to 'flex' or 'block' based on your styling
-    infoIcon.style.display = 'block';
+    document.getElementById('info-icon').style.display = 'block';
   }
 
 
@@ -441,7 +442,7 @@
   };
 
   window.onload = function() {
-    document.getElementById('logo').style.display = 'block';
+    
   };
 </script>
 </html>
