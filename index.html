@@ -214,26 +214,21 @@
   header nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px;
     background-color: transparent;
   }
   
   #logo-container {
-    /* Center the logo */
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-  }
-  
-  #logo {
-    /* Adjust the height as needed to make the logo bigger */
-    height: 120px; /* Example height, adjust as needed */
+    flex-grow: 0;  /* Prevents the logo container from growing */
+    text-align: center;
   }
   
   .info-icon {
     font-size: 20px;
     color: white;
     cursor: pointer;
+    display: block;  /* Change from none to block to make it visible */
   }
   
   /* Adjusting the size of the info icon on smaller screens */
@@ -243,17 +238,20 @@
     }
   }
 
+
 </style>
 </head>
 <body>
   <header>
-    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <nav>
+      <!-- Left spacer -->
+      <div style="flex: 1;"></div>
       <!-- Logo container -->
-      <div id="logo-container" style="text-align: center;">
-        <img id="logo" src="logo.png" alt="Logo" style="max-height: 120px;"> 
+      <div id="logo-container" style="flex-grow: 0;">
+        <img id="logo" src="logo.png" alt="Logo">
       </div>
-      <!-- Info button initially hidden -->
-      <div style="text-align: right;">
+      <!-- Right container for the info button, aligned to the right -->
+      <div style="flex: 1; text-align: right;">
         <button id="info-icon" class="info-icon" onclick="openModal()" style="background: none; border: none; display: none;">
           <i class="fas fa-info-circle"></i>
         </button>
