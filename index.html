@@ -348,7 +348,8 @@
   }
 
   function showProgressBar() {
-    document.getElementById('info-icon').style.display = 'block';
+    const infoIcon = document.getElementById('info-icon');
+    infoIcon.style.display = 'block';
     const loadingScreen = document.getElementById('loadingScreen');
     loadingScreen.style.display = 'none';
     const availablePoints = document.getElementById('available-points');
