@@ -149,6 +149,7 @@
   }
 
   .info-icon {
+    display: none;
     cursor: pointer;
     grid-column: 3;
     color: gray; /* Text color */
@@ -232,14 +233,14 @@
   
   .info-icon {
     font-size: 20px;
-    color: white;
+    color: gray;
     cursor: pointer;
   }
   
   /* Adjusting the size of the info icon on smaller screens */
   @media only screen and (max-width: 768px) {
     .info-icon {
-      font-size: 16px;
+      font-size: 22px;
     }
   }
 
@@ -254,7 +255,7 @@
         <img id="logo" src="logo.png" alt="Logo" style="max-width: 100%; height: auto; display: none;"> 
       </div>
       <div style="flex: 1; text-align: right;">
-        <button class="info-icon" onclick="openModal()" style="background: none; border: none;">
+        <button id="info-icon" onclick="openModal()" style="background: none; border: none;">
           <i class="fas fa-info-circle"></i>
         </button>
       </div>
@@ -290,6 +291,7 @@
   var isClientVIP;
   var startingPoints;
   var currentPoints;
+  var infoIcon = document.getElementById('info-icon');
   
 
 
@@ -336,6 +338,7 @@
               progressbar.style.setProperty('--bar-gradient-end', gradient.end);
               progressbar.style.setProperty('--value', currentPoints.toString());
               progressbar.style.setProperty('--progress-value', points.toString());
+              
               // Function to show the progress bar after getting points
               showProgressBar();
               resolve(points); // Resolve the Promise with the integer points value
@@ -354,6 +357,7 @@
     availablePoints.style.display = 'flex';
     const progressBar = document.getElementById('progressbar');
     progressBar.style.display = 'flex'; // Change to 'flex' or 'block' based on your styling
+    infoIcon.style.display = 'block';
   }
 
 
