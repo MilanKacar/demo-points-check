@@ -30,32 +30,10 @@
 
   header {
     display: flex;
-    justify-content: space-between;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
+    align-items: right;
     padding: 10px;
     background-color: transparent;
     color: white;
-  }
-
-  @media only screen and (max-width: 768px) {
-    header nav ul li {
-      /* Adjust flex properties for smaller screens */
-      flex: none;
-    }
-  
-    header nav ul li:not(:first-child) {
-      /* Ensure that only the logo is centered on small screens */
-      flex-grow: 1;
-    }
-    
-    .info-icon {
-      /* Adjustments for the info icon */
-      font-size: 16px;
-      background: none;
-      border: none;
-      color: white;
-    }
   }
 
   [role="progressbar"] {
@@ -126,7 +104,7 @@
   #logo img {
       /* Scale down the image to 40% of its original size   */
       /* Allows for centering with text-align display: inline-block;*/
-      grid-column: 2;
+      display: flex;
       transform: scale(0.4);
       margin-bottom: -120px;
       height: 60px;
