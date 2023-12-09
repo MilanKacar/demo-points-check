@@ -248,18 +248,16 @@
 </head>
 <body>
   <header>
-    <nav style="display: flex; justify-content: space-between;" >
-      <div style="flex: 1;"></div> <!-- This empty div will push the logo to the center -->
-      <div id="logo-container" style="flex: 2; text-align: center;">
-        <!-- Logo will be displayed after page load, adjust the size as needed -->
-        <img id="logo" src="logo.png" alt="Logo" style="max-width: 100%; height: auto; display: none;"> 
-      </div>
-      <div style="flex: 1; text-align: right; justify-content: flex-end;">
-        <button class="info-icon" id="info-icon" onclick="openModal()" style="background: none; border: none; display: none; text-align: right; justify-content: flex-end;">
-          <i class="fas fa-info-circle"></i>
-        </button>
-      </div>
-    </nav>
+    <div style="flex: 1;"></div> <!-- This empty div will push the logo to the center -->
+    <div id="logo-container" style="flex: 2; text-align: center;">
+      <!-- Logo will be displayed after page load, adjust the size as needed -->
+      <img id="logo" src="logo.png" alt="Logo" style="max-width: 100%; height: auto; display: none;"> 
+    </div>
+    <div style="flex: 3; text-align: right; justify-content: flex-end;">
+      <button class="info-icon" id="info-icon" onclick="openModal()" style="background: none; border: none; display: none; text-align: right; justify-content: flex-end;">
+        <i class="fas fa-info-circle"></i>
+      </button>
+    </div>
   </header>
   <div>
     <div class="modal" id="myModal">
