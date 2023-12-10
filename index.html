@@ -243,7 +243,7 @@
         <img id="logo" src="logo.png" alt="Logo" style="max-width: 100%; height: auto; display: block;"> 
       </div>
       <div style="flex: 1; text-align: right;">
-        <button class="info-icon" onclick="openModal()" style="background: none; border: none;">
+        <button class="info-icon" id="info-icon" onclick="openModal()" style="background: none; border: none; display: none;">
           <i class="fas fa-info-circle"></i>
         </button>
       </div>
@@ -343,6 +343,8 @@
     availablePoints.style.display = 'flex';
     const progressBar = document.getElementById('progressbar');
     progressBar.style.display = 'flex'; // Change to 'flex' or 'block' based on your styling
+    const infoIcon = document.getElementById('info-icon');
+    infoIcon.style.display = 'block';
   }
 
 
