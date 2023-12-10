@@ -207,6 +207,11 @@
       color: #333;
   }
 
+  @keyframes gentle-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+  }
+  
   .vip-badge {
       font-family: 'Roboto', sans-serif;
       margin-bottom: 5%;
@@ -223,7 +228,7 @@
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
       width: 40px; /* Set width to 40px */
       height: 24px; /* Set height to 40px */
-      animation: float-shadow 3s infinite linear;
+      animation: gentle-pulse 2s infinite ease-in-out;
   }
 
 
@@ -259,13 +264,6 @@
     }
   }
 
-  @keyframes float-shadow {
-      0%   { box-shadow: 2px 2px 7px rgba(0,0,0,0.5); }
-      25%  { box-shadow: -2px 2px 7px rgba(0,0,0,0.5); }
-      50%  { box-shadow: -2px -2px 7px rgba(0,0,0,0.5); }
-      75%  { box-shadow: 2px -2px 7px rgba(0,0,0,0.5); }
-      100% { box-shadow: 2px 2px 7px rgba(0,0,0,0.5); }
-  }
 
 </style>
 </head>
