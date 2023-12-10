@@ -32,7 +32,6 @@
     display: flex;
     align-items: right;
     padding: 10px;
-    justify-content: space-between;
     background-color: transparent;
     color: white;
   }
@@ -233,7 +232,7 @@
   
   .info-icon {
     font-size: 20px;
-    color: gray;
+    color: white;
     cursor: pointer;
   }
   
@@ -248,18 +247,18 @@
 </head>
 <body>
   <header>
-    <div style="display: flex; justify-content:space-between; flex-direction: row;">
+    <nav>
       <div style="flex: 1;"></div> <!-- This empty div will push the logo to the center -->
       <div id="logo-container" style="flex: 2; text-align: center;">
         <!-- Logo will be displayed after page load, adjust the size as needed -->
-        <img id="logo" src="logo.png" alt="Logo" style="max-width: 100%; height: auto; display: none;"> 
+        <img id="logo" src="logo.png" alt="Logo" style="max-width: 100%; height: auto; display: block;"> 
       </div>
-      <div style="flex: 3; text-align: right; justify-content: flex-end;">
-        <button class="info-icon" id="info-icon" onclick="openModal()" style="background: none; border: none; display: none; text-align: right; justify-content: flex-end;">
+      <div style="flex: 1; text-align: right;">
+        <button class="info-icon" onclick="openModal()" style="background: none; border: none;">
           <i class="fas fa-info-circle"></i>
         </button>
-      </div>  
-    </div>
+      </div>
+    </nav>
   </header>
   <div>
     <div class="modal" id="myModal">
@@ -350,14 +349,11 @@
 
   function showProgressBar() {
     const loadingScreen = document.getElementById('loadingScreen');
-    const availablePoints = document.getElementById('available-points');
-    const progressBar = document.getElementById('progressbar');
-    const infoIcon = document.getElementById('info-icon');
-
     loadingScreen.style.display = 'none';
+    const availablePoints = document.getElementById('available-points');
     availablePoints.style.display = 'flex';
-    progressBar.style.display = 'flex';
-    infoIcon.style.display = 'flex'; // Show the info button here
+    const progressBar = document.getElementById('progressbar');
+    progressBar.style.display = 'flex'; // Change to 'flex' or 'block' based on your styling
   }
 
 
